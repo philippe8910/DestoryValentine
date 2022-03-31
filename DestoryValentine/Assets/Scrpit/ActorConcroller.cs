@@ -74,12 +74,7 @@ public class ActorConcroller : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Finish"))
         {
-            EventBus.Post(new ActorCollisionObstaclesDetected());
-        }
-
-        if (collision.gameObject.CompareTag("HeartShape"))
-        {
-            
+            EventBus.Post(new LoseLevelDetected());
         }
     }
 }

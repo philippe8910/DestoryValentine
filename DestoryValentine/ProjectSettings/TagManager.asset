@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - HeartShape
+  - Bullet
+  - Object
   layers:
   - Default
   - TransparentFX
