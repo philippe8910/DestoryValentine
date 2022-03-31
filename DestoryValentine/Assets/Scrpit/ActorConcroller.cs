@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Project;
@@ -67,5 +68,18 @@ public class ActorConcroller : MonoBehaviour
     private void SetIsStart(bool _isStart)
     {
         isStart = _isStart;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            EventBus.Post(new ActorCollisionObstaclesDetected());
+        }
+
+        if (collision.gameObject.CompareTag("HeartShape"))
+        {
+            
+        }
     }
 }
