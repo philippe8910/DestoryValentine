@@ -6,7 +6,6 @@ using Project;
 
 public class UIController : MonoBehaviour
 {
-    
     private UIManager uiManager;
     
     void Start()

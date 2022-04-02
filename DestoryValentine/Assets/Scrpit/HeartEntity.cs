@@ -13,6 +13,7 @@ public class HeartEntity : MonoBehaviour
         EventBus.Post(new HeartbreakDetected());
         isBreak = true;
     }
+    
 
     private void OnTriggerEnter(Collider other)
     {
