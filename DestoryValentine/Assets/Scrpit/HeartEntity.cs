@@ -6,11 +6,22 @@ using UnityEngine;
 
 public class HeartEntity : MonoBehaviour
 {
-    [SerializeField] private bool isBreak;
+    [SerializeField] private CoupleActor coupleActor;
     
+    [SerializeField] private bool isBreak;
+
+    private void Start()
+    {
+        coupleActor = GetComponentInParent<CoupleActor>();
+    }
+
     private void Heartbreak()
     {
         EventBus.Post(new HeartbreakDetected());
+        
+        coupleActor.BreakUps();
+        
+        gameObject.SetActive(false);
         isBreak = true;
     }
     
@@ -19,8 +30,6 @@ public class HeartEntity : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            Debug.Log("owo");
-        
             if (other.CompareTag("Bullet"))
             {
                 Heartbreak();    
