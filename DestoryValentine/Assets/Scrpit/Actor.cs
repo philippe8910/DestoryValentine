@@ -19,7 +19,7 @@ public class Actor : MonoBehaviour
 
     public void RotateActor(Vector3 direction)
     {
-        bulletObject.transform.rotation = Quaternion.Euler(new Vector3(-direction.y , direction.x , direction.z));
+        bulletObject.transform.rotation = Quaternion.Euler(new Vector3(-Mathf.Clamp(direction.y , -80 , 80) , Mathf.Clamp(direction.x , -80 , 80) , direction.z));
     }
 
 
