@@ -16,13 +16,13 @@ public class MenuEntity : MonoBehaviour
 
    public void Open()
    {
-      animator.Play("Open");
+      animator.Play("FadeIn");
       isOpen = true;
    }
 
    public void Close()
    {
-      animator.Play("Close");
+      animator.Play("FadeOut");
       isOpen = false;
    }
 

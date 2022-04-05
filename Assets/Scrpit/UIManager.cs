@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenLosePanel()
     {
-        
+        LosePanel.Open();
     }
 
     public void OpenShopMenu()
