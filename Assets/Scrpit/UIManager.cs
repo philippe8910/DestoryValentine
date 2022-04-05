@@ -18,49 +18,62 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private MenuEntity LevelMenu;
 
-    private List<MenuEntity> MenuEntities = new List<MenuEntity>();
     void Start()
     {
-        MenuEntities.Add(LosePanel);
-        MenuEntities.Add(WinPanel);
-        MenuEntities.Add(SettingMenu);
-        MenuEntities.Add(ShopMenu);
-        MenuEntities.Add(LevelMenu);
+       
     }
 
     public void OpenSettingMenu()
     {
-        
+        if (SettingMenu.GetIsOpen())
+        {
+            SettingMenu.Close();
+        }
+        else
+        {
+            SettingMenu.Open();
+        }
     }
 
+    public void OpenShopMenu()
+    {
+        if (ShopMenu.GetIsOpen())
+        {
+            ShopMenu.Close();
+        }
+        else
+        {
+            ShopMenu.Open();
+        }
+    }
+
+    public void OpenLevelMenu()
+    {
+        if (LevelMenu.GetIsOpen())
+        {
+            LevelMenu.Close();
+        }
+        else
+        {
+            LevelMenu.Open();
+        }
+    }
+    
+    
     public void OpenWinPanel()
     {
-        
+        WinPanel.Open();
+        ResetAllMenu();
     }
 
     public void OpenLosePanel()
     {
         LosePanel.Open();
-    }
-
-    public void OpenShopMenu()
-    {
-        
-    }
-
-    public void OpenLevelMenu()
-    {
-        
+        ResetAllMenu();
     }
 
     public void ResetAllMenu()
     {
-        foreach (var VARIABLE in MenuEntities)
-        {
-            if (VARIABLE.GetIsOpen())
-            {
-                VARIABLE.Close();
-            }
-        }
+        
     }
 }

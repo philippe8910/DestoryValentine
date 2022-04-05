@@ -6,17 +6,21 @@ using UnityEngine;
 
 public class LevelSystem : MonoBehaviour
 {
-    [SerializeField] private List<HeartEntity> HeartEntities = new List<HeartEntity>();
+
     
-    // Start is called before the first frame update
     void Start()
     {
-        EventBus.Subscribe<HeartbreakDetected>(OnHeartbreakDetected);
+        EventBus.Subscribe<ActorHeartbreakJudgement>(OnActorHeartbreakJudgement);
     }
 
-    private void OnHeartbreakDetected(HeartbreakDetected obj)
+    private void OnActorHeartbreakJudgement(ActorHeartbreakJudgement obj)
     {
+        var isPass = obj.isPass;
         
+        if (isPass)
+        {
+            PassLevel();
+        }
     }
 
     private void PassLevel()

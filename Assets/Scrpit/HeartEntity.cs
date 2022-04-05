@@ -7,8 +7,10 @@ using UnityEngine;
 public class HeartEntity : MonoBehaviour
 {
     [SerializeField] private CoupleActor coupleActor;
+
+    [SerializeField] private bool isLast = false;
     
-    [SerializeField] private bool isBreak;
+    [SerializeField] private bool isBreak = false;
 
     private void Start()
     {
@@ -17,7 +19,7 @@ public class HeartEntity : MonoBehaviour
 
     private void Heartbreak()
     {
-        EventBus.Post(new HeartbreakDetected());
+        EventBus.Post(new ActorHeartbreakJudgement(isLast));
         
         coupleActor.BreakUps();
         

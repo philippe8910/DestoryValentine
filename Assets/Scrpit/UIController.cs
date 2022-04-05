@@ -8,16 +8,44 @@ public class UIController : MonoBehaviour
 {
     private UIManager uiManager;
     
+    
+    /*
+     *  MENU INDEX
+     *  1 : SHOP
+     *  2 : LEVEL
+     *  3 : SETTING
+     */
+    
     void Start()
     {
         uiManager = GetComponent<UIManager>();
 
-        EventBus.Subscribe<OpenLevelMenuDetected>(OnOpenLevelMenuDetected);
-        EventBus.Subscribe<OpenSettingMenuDetected>(OnOpenSettingMenuDetected);
-        EventBus.Subscribe<OpenShopMenuDetected>(OnOpenShopMenuDetected);
+        EventBus.Subscribe<OpenMenuDetected>(OnOpenMenuDetected);
+
         
         EventBus.Subscribe<LoseLevelDetected>(OnLoseLevelDetected);
         EventBus.Subscribe<PassLevelDetected>(OnPassLevelDetected);
+    }
+
+    private void OnOpenMenuDetected(OpenMenuDetected obj)
+    {
+        var menuIndex = obj.index;
+
+
+        switch (menuIndex)
+        {
+            case 1:  //SHOP
+                uiManager.OpenShopMenu();
+                break;
+            
+            case 2: //LEVEL
+                uiManager.OpenLevelMenu();
+                break;
+            
+            case 3: //SETTING
+                uiManager.OpenSettingMenu();
+                break;
+        }
     }
 
     private void OnPassLevelDetected(PassLevelDetected obj)
@@ -31,23 +59,5 @@ public class UIController : MonoBehaviour
         uiManager.OpenLosePanel();
         Debug.Log("OnLoseLevelDetected");
     }
-
-
-    private void OnOpenLevelMenuDetected(OpenLevelMenuDetected obj)
-    {
-        uiManager.OpenLevelMenu();
-        Debug.Log("OnOpenLevelMenuDetected");
-    }
-
-    private void OnOpenSettingMenuDetected(OpenSettingMenuDetected obj)
-    {
-        uiManager.OpenSettingMenu();
-        Debug.Log("OnOpenSettingMenuDetected");
-    }
-
-    private void OnOpenShopMenuDetected(OpenShopMenuDetected obj)
-    {
-        uiManager.OpenShopMenu();   
-        Debug.Log("OnOpenShopMenuDetected");
-    }
+    
 }
