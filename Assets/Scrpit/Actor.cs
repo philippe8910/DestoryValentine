@@ -13,7 +13,6 @@ public class Actor : MonoBehaviour
 
     public void MoveActor(Vector3 direction)
     {
-        transform.Translate(0,0,1 * Time.deltaTime);
         transform.position += new Vector3(direction.x , direction.y , 0) * Time.deltaTime * 0.03f;
     }
 

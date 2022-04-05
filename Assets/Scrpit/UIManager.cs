@@ -18,13 +18,19 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private MenuEntity LevelMenu;
 
+    private List<MenuEntity> menuEntities = new List<MenuEntity>();
+
     void Start()
     {
-       
+        menuEntities.Add(ShopMenu);
+        menuEntities.Add(LevelMenu);
+        menuEntities.Add(SettingMenu);
     }
 
     public void OpenSettingMenu()
     {
+        ResetAllMenu();
+
         if (SettingMenu.GetIsOpen())
         {
             SettingMenu.Close();
@@ -37,6 +43,8 @@ public class UIManager : MonoBehaviour
 
     public void OpenShopMenu()
     {
+        ResetAllMenu();
+
         if (ShopMenu.GetIsOpen())
         {
             ShopMenu.Close();
@@ -49,6 +57,8 @@ public class UIManager : MonoBehaviour
 
     public void OpenLevelMenu()
     {
+        ResetAllMenu();
+        
         if (LevelMenu.GetIsOpen())
         {
             LevelMenu.Close();
@@ -63,17 +73,21 @@ public class UIManager : MonoBehaviour
     public void OpenWinPanel()
     {
         WinPanel.Open();
-        ResetAllMenu();
     }
 
     public void OpenLosePanel()
     {
         LosePanel.Open();
-        ResetAllMenu();
     }
 
     public void ResetAllMenu()
     {
-        
+        foreach (var menu in menuEntities)
+        {
+            if (menu.GetIsOpen())
+            {
+                menu.Close();
+            }
+        }
     }
 }
