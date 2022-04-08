@@ -8,9 +8,9 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private MenuEntity LosePanel;
+    [SerializeField] private SettlingMenuEntity LosePanel;
 
-    [SerializeField] private MenuEntity WinPanel;
+    [SerializeField] private SettlingMenuEntity WinPanel;
 
     [SerializeField] private MenuEntity SettingMenu;
 
@@ -68,11 +68,12 @@ public class UIManager : MonoBehaviour
             LevelMenu.Open();
         }
     }
-    
-    
-    public void OpenWinPanel()
+
+
+    public void OpenWinPanel(int SettlingStar)
     {
         WinPanel.Open();
+        WinPanel.SetSettlingStar(SettlingStar);
     }
 
     public void OpenLosePanel()

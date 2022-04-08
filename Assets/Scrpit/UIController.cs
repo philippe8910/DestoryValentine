@@ -50,7 +50,9 @@ public class UIController : MonoBehaviour
 
     private void OnPassLevelDetected(PassLevelDetected obj)
     {
-        uiManager.OpenWinPanel();
+        var StarCount = obj.StarCount;
+        
+        uiManager.OpenWinPanel(StarCount);
         Debug.Log("OnPassLevelDetected");
     }
 

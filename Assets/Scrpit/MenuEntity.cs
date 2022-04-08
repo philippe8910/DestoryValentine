@@ -14,19 +14,19 @@ public class MenuEntity : MonoBehaviour
       animator = GetComponent<Animator>();
    }
 
-   public void Open()
+   public virtual void Open()
    {
       animator.Play("FadeIn");
       isOpen = true;
    }
 
-   public void Close()
+   public virtual void Close()
    {
       animator.Play("FadeOut");
       isOpen = false;
    }
 
-   public void Default()
+   public virtual void Default()
    {
       animator.Play("Defult");
       isOpen = false;
