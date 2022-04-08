@@ -72,13 +72,13 @@ public class ActorConcroller : MonoBehaviour
 
     private void DetectedActorMove()
     {
-        Direction = endPos - startPos;
+        Direction = (endPos - startPos) * 0.1f;
         EventBus.Post(new ActorMoveDetected(Direction));
     }
     
     private void DetectedActorRotate()
     {
-        Direction = endPos - startPos;
+        Direction = (endPos - startPos) * 0.1f;
         EventBus.Post(new ActorRotateDetected(Direction));
     }
 
