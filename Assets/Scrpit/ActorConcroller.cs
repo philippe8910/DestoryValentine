@@ -49,7 +49,7 @@ public class ActorConcroller : MonoBehaviour
     {
         if(!isStart) return;
         
-        transform.Translate(0,0,1 * Time.deltaTime);
+        transform.Translate(0,0,2 * Time.deltaTime);
 
         if (Input.GetMouseButtonDown(0))
         {
