@@ -9,6 +9,8 @@ public class ActorConcroller : MonoBehaviour
 {
     private Actor actor;
 
+    [SerializeField] private float speed;
+
     [SerializeField] private bool isStart;
     
     [SerializeField] private Vector3 startPos, endPos, Direction;
@@ -49,7 +51,7 @@ public class ActorConcroller : MonoBehaviour
     {
         if(!isStart) return;
         
-        transform.Translate(0,0,2 * Time.deltaTime);
+        transform.Translate(0,0,speed * Time.deltaTime);
 
         if (Input.GetMouseButtonDown(0))
         {
