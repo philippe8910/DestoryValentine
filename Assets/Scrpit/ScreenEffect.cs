@@ -25,11 +25,11 @@ public class ScreenEffect : MonoBehaviour
 
         if (isOpen)
         {
-            animator.Play("ScreenEffectClose");
+            animator.Play("ScreenEffectOpen");
         }
         else
         {
-            animator.Play("ScreenEffectOpen");
+            animator.Play("ScreenEffectClose");
         }
     }
 

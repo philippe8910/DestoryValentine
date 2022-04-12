@@ -13,13 +13,13 @@ public class StartGameButton : ButtonListener
     public override async void OnClick()
     {
         //TODO 
-        EventBus.Post(new ChangeSceneDetected(false));
+        EventBus.Post(new ChangeSceneDetected(true));
         EventBus.Post(new AudioPlayDetected(0));
         
         await Task.Delay(2000);
         
         mainMenu.gameObject.SetActive(false);
         
-        EventBus.Post(new ChangeSceneDetected(true));
+        EventBus.Post(new ChangeSceneDetected(false));
     }
 }

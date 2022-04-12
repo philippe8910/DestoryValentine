@@ -15,6 +15,12 @@ public class LevelSystem : MonoBehaviour
     {
         EventBus.Subscribe<ActorHeartbreakJudgement>(OnActorHeartbreakJudgement);
         EventBus.Subscribe<LevelStartDetected>(OnLevelStartDetected);
+        EventBus.Subscribe<SetLevelDetected>(OnSetLevelDetected);
+    }
+
+    private void OnSetLevelDetected(SetLevelDetected obj)
+    {
+        
     }
 
     private void OnLevelStartDetected(LevelStartDetected obj)
