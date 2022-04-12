@@ -8,5 +8,7 @@ public class StartButton : ButtonListener
     public override void OnClick()
     {
         EventBus.Post(new LevelStartDetected());
+        
+        gameObject.SetActive(false);
     }
 }
