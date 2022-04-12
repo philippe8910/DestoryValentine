@@ -19,7 +19,10 @@ public class HeartEntity : MonoBehaviour
 
     private void Heartbreak()
     {
+        //TODO
+        
         EventBus.Post(new ActorHeartbreakJudgement(isLast));
+        EventBus.Post(new AudioPlayDetected(1));
         
         coupleActor.BreakUps();
         

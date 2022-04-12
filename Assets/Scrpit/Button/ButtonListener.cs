@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ButtonListener : MonoBehaviour
 {
     private Button button;
-    void Start()
+    public virtual void Start()
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);

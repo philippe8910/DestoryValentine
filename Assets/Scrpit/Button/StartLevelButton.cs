@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Project;
 using UnityEngine;
 
-public class StartButton : ButtonListener
+public class StartLevelButton : ButtonListener
 {
     public override void OnClick()
     {
