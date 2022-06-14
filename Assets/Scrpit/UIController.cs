@@ -64,5 +64,10 @@ public class UIController : MonoBehaviour
         uiManager.OpenLosePanel();
         Debug.Log("OnLoseLevelDetected");
     }
+
+    public void GetHP(int value)
+    {
+        HpText.text = "" + int.Parse(HpText.text) + value;
+    }
     
 }
