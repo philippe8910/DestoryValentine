@@ -11,7 +11,7 @@ public class ActorConcroller : MonoBehaviour
 
     [SerializeField] private float speed;
 
-    [SerializeField] private bool isStart;
+    [SerializeField] private bool isStart , isEnd;
     
     [SerializeField] private Vector3 startPos, endPos, Direction;
 
@@ -24,10 +24,20 @@ public class ActorConcroller : MonoBehaviour
         EventBus.Subscribe<ActorMoveDetected>(OnActorMoveDetected);
         EventBus.Subscribe<LevelStartDetected>(OnLevelStartDetected);
         EventBus.Subscribe<ActorRotateDetected>(OnActorRotateDetected);
+        
+        EventBus.Subscribe<PassLevelDetected>(OnPassLevelDetected);
+    }
+
+    private void OnPassLevelDetected(PassLevelDetected obj)
+    {
+        isEnd = true;
+        SetIsStart(false);
     }
 
     private void OnLevelStartDetected(LevelStartDetected obj)
     {
+        isEnd = false;
+        
         if (!isStart)
         {
             SetIsStart(true);
@@ -91,9 +101,15 @@ public class ActorConcroller : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Finish"))
+        if (collision.gameObject.CompareTag("Finish") && !isEnd)
         {
             EventBus.Post(new LoseLevelDetected());
         }
+    }
+
+    public void OnResetPosition()
+    {
+        actor.ResetPosition();
+        isStart = false;
     }
 }

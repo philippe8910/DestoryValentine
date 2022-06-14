@@ -15,7 +15,7 @@ public class CoupleActor : MonoBehaviour
 
     public void BreakUps()
     {
-        animator.Play("BreakUp");
+        //animator.Play("BreakUp");
     }
 
 }
