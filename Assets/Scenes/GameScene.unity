@@ -7948,7 +7948,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObject: {fileID: 1287320075}
   resetPosition: {x: 0, y: 0, z: 0}
+  bulletPosition: {x: 0, y: 0, z: 0}
   resetQuaternion: {x: 0, y: 0, z: 0, w: 0}
+  bulletQuaternion: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &668565430
 Rigidbody:
   m_ObjectHideFlags: 0
