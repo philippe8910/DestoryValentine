@@ -31,6 +31,9 @@ public class ActorConcroller : MonoBehaviour
 
     private void OnLoseLevelDetected(LoseLevelDetected obj)
     {
+        isEnd = true;
+        SetIsStart(false);
+        
         actor.ThrowBullet();
     }
 
@@ -38,6 +41,8 @@ public class ActorConcroller : MonoBehaviour
     {
         isEnd = true;
         SetIsStart(false);
+        
+        actor.ThrowBullet();
     }
 
     private void OnLevelStartDetected(LevelStartDetected obj)
@@ -80,11 +85,8 @@ public class ActorConcroller : MonoBehaviour
             endPos = Input.mousePosition;
         }
         
-
         DetectedActorMove();
         DetectedActorRotate();
-        
-        
     }
 
 
@@ -117,5 +119,7 @@ public class ActorConcroller : MonoBehaviour
     {
         actor.ResetPosition();
         isStart = false;
+        
+        
     }
 }

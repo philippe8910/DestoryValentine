@@ -31,6 +31,7 @@ public class Actor : MonoBehaviour
         transform.position = resetPosition;
         transform.rotation = resetQuaternion;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     public void ThrowBullet()

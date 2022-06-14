@@ -6,10 +6,18 @@ using UnityEngine;
 public class CameraActor : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPlayer;
+
+    [SerializeField] private Vector3 resetPosition;
     
     void Start()
     {
         EventBus.Subscribe<LevelStartDetected>(OnLevelStartDetected);
+        resetPosition = transform.position;
+    }
+
+    public void OnReset()
+    {
+        transform.position = resetPosition;
     }
 
     private void OnLevelStartDetected(LevelStartDetected obj)
