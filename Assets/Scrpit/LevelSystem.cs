@@ -63,8 +63,18 @@ public class LevelSystem : MonoBehaviour
     public void SetLevel(string gameObject)
     {
         var level = Resources.Load<GameObject>("LevelPrefab/" + gameObject);
+        var index = gameObject.Split('_');
+
+        Debug.Log(index[1]);
         
-        currentLevel = Instantiate(level, level.transform.position, level.transform.rotation);
+        if (int.Parse(index[1]) >= 5)
+        {
+            currentLevel = Instantiate(level, level.transform.position, level.transform.rotation);
+        }
+        else
+        {
+            currentLevel = Instantiate(level, transform.position, level.transform.rotation);
+        }
     }
 
     public void DestoryLevel()
