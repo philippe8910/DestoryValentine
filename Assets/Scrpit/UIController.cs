@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Scrpit.EventList;
 using Project;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
     private UIManager uiManager;
+
+    private Slider enegryBar, HpBar;
     
     
     /*
