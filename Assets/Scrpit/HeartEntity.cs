@@ -12,9 +12,12 @@ public class HeartEntity : MonoBehaviour
     
     [SerializeField] private bool isBreak = false;
 
+    private heart _heart;
+
     private void Start()
     {
         coupleActor = GetComponentInParent<CoupleActor>();
+        _heart = GetComponent<heart>();
     }
 
     private void Heartbreak()
@@ -25,6 +28,7 @@ public class HeartEntity : MonoBehaviour
         EventBus.Post(new AudioPlayDetected(1));
         
         coupleActor.BreakUps();
+        _heart.BreakTheThing();
         
         gameObject.SetActive(false);
         isBreak = true;

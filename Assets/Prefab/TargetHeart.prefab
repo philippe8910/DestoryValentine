@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2386980163456361500}
   - component: {fileID: 2786312766534442646}
+  - component: {fileID: 739344992896183176}
+  - component: {fileID: 8797771268362765819}
   m_Layer: 0
   m_Name: TargetHeart
   m_TagString: Untagged
@@ -26,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3056696627596639910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.841, y: -1.626, z: 16.316143}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.21249905, y: 0.17626, z: 0.17626}
   m_Children:
   - {fileID: 3370302132154762340}
   - {fileID: 5864181058391151889}
@@ -47,6 +49,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fractured: {fileID: 495731729443381345, guid: 46bf942e457818f4bacb5abfeb385127, type: 3}
   breakForce: 500
+--- !u!65 &739344992896183176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056696627596639910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.415367, y: 1.1593556, z: 1}
+  m_Center: {x: -0.021536972, y: 0.07967784, z: 0}
+--- !u!114 &8797771268362765819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056696627596639910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38fc2cf4994ccf4293288e7ceb24c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coupleActor: {fileID: 0}
+  isLast: 0
+  isBreak: 0
 --- !u!1 &6302227542040091745
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class CoupleActor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
+        //animator = GetComponentInChildren<Animator>();
     }
 
 
