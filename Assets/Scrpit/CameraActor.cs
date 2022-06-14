@@ -23,7 +23,7 @@ public class CameraActor : MonoBehaviour
     private void OnLevelStartDetected(LevelStartDetected obj)
     {
         transform.parent = bulletPlayer.transform;
-        transform.localPosition = new Vector3(0, 0.1f, -0.65f);
+        transform.localPosition = new Vector3(0, 0.1f, -0.85f);
     }
     
 }
