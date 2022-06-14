@@ -64,7 +64,7 @@ public class LevelSystem : MonoBehaviour
     {
         var level = Resources.Load<GameObject>("LevelPrefab/" + gameObject);
         
-        currentLevel = Instantiate(level, transform.position, level.transform.rotation);
+        currentLevel = Instantiate(level, level.transform.position, level.transform.rotation);
     }
 
     public void DestoryLevel()
