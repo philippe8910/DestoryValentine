@@ -30,6 +30,14 @@ public class Actor : MonoBehaviour
     {
         transform.position = resetPosition;
         transform.rotation = resetQuaternion;
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+    }
+
+    public void ThrowBullet()
+    {
+        GetComponent<Rigidbody>().AddForce(transform.forward * 3 , ForceMode.Impulse);
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        Camera.main.transform.parent = null;
     }
 
 

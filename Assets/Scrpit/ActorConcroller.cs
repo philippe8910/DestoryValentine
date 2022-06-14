@@ -26,6 +26,12 @@ public class ActorConcroller : MonoBehaviour
         EventBus.Subscribe<ActorRotateDetected>(OnActorRotateDetected);
         
         EventBus.Subscribe<PassLevelDetected>(OnPassLevelDetected);
+        EventBus.Subscribe<LoseLevelDetected>(OnLoseLevelDetected);
+    }
+
+    private void OnLoseLevelDetected(LoseLevelDetected obj)
+    {
+        actor.ThrowBullet();
     }
 
     private void OnPassLevelDetected(PassLevelDetected obj)
