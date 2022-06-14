@@ -10,6 +10,8 @@ public class LevelSystem : MonoBehaviour
 
     [SerializeField] private int HeartBreakCount = 0;
 
+    private GameObject currentLevel;
+
 
     void Start()
     {
@@ -56,5 +58,17 @@ public class LevelSystem : MonoBehaviour
             EventBus.Post(new PassLevelDetected(1));
         }
         
+    }
+
+    public void SetLevel(string gameObject)
+    {
+        var level = Resources.Load<GameObject>("LevelPrefab/" + gameObject);
+        
+        currentLevel = Instantiate(level, transform.position, level.transform.rotation);
+    }
+
+    public void DestoryLevel()
+    {
+        Destroy(currentLevel);
     }
 }

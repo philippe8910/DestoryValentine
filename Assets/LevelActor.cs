@@ -10,7 +10,7 @@ public class LevelActor : MonoBehaviour
         
     }
 
-    public void SetLevel(string index)
+    public void SetLevelas(string index)
     {
         var levelObj = Resources.Load(index);
         var levelPrefab = (GameObject) levelObj;
