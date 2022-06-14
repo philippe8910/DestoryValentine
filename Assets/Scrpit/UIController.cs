@@ -9,9 +9,9 @@ public class UIController : MonoBehaviour
 {
     private UIManager uiManager;
 
-    private Slider enegryBar, HpBar;
-    
-    
+    [SerializeField] private Text enegryText, HpText;
+
+
     /*
      *  MENU INDEX
      *  1 : SHOP
